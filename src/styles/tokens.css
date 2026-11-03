@@ -1,0 +1,75 @@
+/* =========================================
+   ANGGORO & ASSOCIATES
+   DESIGN TOKENS
+========================================= */
+
+:root {
+  /* Brand backgrounds */
+  --color-black: #090908;
+  --color-charcoal: #15130f;
+  --color-charcoal-soft: #1d1a15;
+
+  /* Light surfaces */
+  --color-ivory: #f4efe6;
+  --color-ivory-dark: #eae2d5;
+
+  /* Champagne gold */
+  --color-gold: #c49a4a;
+  --color-gold-light: #d8b66d;
+  --color-gold-dark: #9e7835;
+
+  /* Text */
+  --color-text-light: #f4efe6;
+  --color-text-beige: #d1c5b2;
+  --color-text-muted: #a9a196;
+  --color-text-dark: #211d17;
+  --color-text-muted-dark: #756d62;
+
+  /* Typography */
+  --font-heading: var(--font-cormorant);
+  --font-body: var(--font-montserrat);
+
+  /* Font sizes */
+  --text-caption: 10px;
+  --text-small: 12px;
+  --text-body: 14px;
+  --text-subheading: 18px;
+
+  /* Layout */
+  --container-width: 1440px;
+  --page-padding: 7.5%;
+  --section-spacing: 120px;
+
+  /* Borders */
+  --border-subtle: rgba(216, 182, 109, 0.16);
+  --border-light: rgba(244, 239, 230, 0.12);
+
+  /* Motion */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Tailwind theme integration */
+@theme inline {
+  --color-background: var(--color-black);
+  --color-foreground: var(--color-text-light);
+
+  --font-heading: var(--font-cormorant);
+  --font-body: var(--font-montserrat);
+}
+
+/* Responsive tokens */
+@media (max-width: 1024px) {
+  :root {
+    --page-padding: 5%;
+    --section-spacing: 96px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 6%;
+    --section-spacing: 76px;
+  }
+}

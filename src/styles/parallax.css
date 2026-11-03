@@ -1,0 +1,226 @@
+/* =========================================
+   ANGGORO & ASSOCIATES
+   PARALLAX SECTION
+   PREMIUM LEGAL EDITORIAL
+   QUIET AUTHORITY
+========================================= */
+
+.parallax {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-black);
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.parallax__background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.parallax__image {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/services/services-parallax.png");
+  background-size: cover;
+  background-position: center 48%;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+.parallax__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 9, 8, 0.78) 0%,
+      rgba(9, 9, 8, 0.62) 50%,
+      rgba(9, 9, 8, 0.78) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(9, 9, 8, 0.38) 0%,
+      rgba(9, 9, 8, 0.12) 50%,
+      rgba(9, 9, 8, 0.38) 100%
+    );
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.parallax__container {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 58px var(--page-padding);
+}
+
+.parallax__content {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.parallax__eyebrow {
+  display: block;
+  margin-bottom: 22px;
+
+  color: var(--color-gold-light);
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.parallax__title {
+  margin: 0;
+
+  color: var(--color-ivory);
+  font-family: var(--font-heading), serif;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.parallax__title em {
+  color: var(--color-gold-light);
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.parallax__description {
+  max-width: 690px;
+  margin: 22px auto 0;
+
+  color: var(--color-text-beige);
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.005em;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .parallax {
+    min-height: 320px;
+  }
+
+  .parallax__container {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .parallax__title {
+    font-size: clamp(29px, 4vw, 38px);
+  }
+
+  .parallax__description {
+    max-width: 650px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .parallax {
+    min-height: 290px;
+  }
+
+  .parallax__container {
+    padding: 48px var(--page-padding);
+  }
+
+  .parallax__eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+  }
+
+  .parallax__title {
+    font-size: clamp(27px, 7vw, 34px);
+    line-height: 1.22;
+  }
+
+  .parallax__description {
+    max-width: 500px;
+    margin-top: 18px;
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .parallax__image {
+    background-attachment: scroll;
+    background-position: center;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .parallax {
+    min-height: 270px;
+  }
+
+  .parallax__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .parallax__title {
+    font-size: 27px;
+  }
+
+  .parallax__description {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax__image {
+    will-change: auto;
+  }
+}
