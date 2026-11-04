@@ -112,7 +112,7 @@
 /* CARD CONTENT */
 .team__card-content {
   position: absolute;
-  top: 67%;
+  top: 75%;
   left: 20px;
   right: 18px;
   z-index: 2;
@@ -126,7 +126,7 @@
 
 .team__role {
   display: block;
-  margin-bottom: 11px;
+  margin-bottom: 1px;
   color: var(--color-gold-light);
   font-family: var(--font-body), sans-serif;
   font-size: 8px;
@@ -141,7 +141,7 @@
   margin: 0;
   color: var(--color-ivory);
   font-family: var(--font-body), sans-serif;
-  font-size: clamp(14px, 1.12vw, 17px);
+  font-size: clamp(14px, 1.12vw, 10px);
   font-weight: 600;
   line-height: 1.38;
   letter-spacing: -0.025em;
@@ -533,20 +533,22 @@
     font-size: 12px;
   }
 
-  .team__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px 16px;
-  }
+  @media (max-width: 600px) {
+    .team__grid {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+      column-gap: 0;
+    }
 
-  .team__photo {
-    aspect-ratio: 0.72 / 1;
-  }
+    .team__photo {
+      width: 100%;
+      aspect-ratio: 0.78 / 1;
+    }
 
-  .team__card-content {
-    top: auto;
-    bottom: 42px;
-    left: 13px;
-    right: 12px;
+    .team__card-content {
+      left: 20px;
+      right: 20px;
+    }
   }
 
   .team__role {
@@ -734,5 +736,20 @@
   .team__profile-line,
   .team__social-link {
     transition: none;
+  }
+}
+
+/* MOBILE TEAM — CARD TEXT POSITION */
+@media (max-width: 600px) {
+  .team__card-content {
+    top: 80%;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .team__card-content {
+    top: 73%;
   }
 }
