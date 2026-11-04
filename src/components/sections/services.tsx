@@ -113,12 +113,12 @@ const practiceAreas: PracticeArea[] = [
     ],
   },
   {
-    title: "Mining, Energy & Natural Resources",
+    title: "Energy & Natural Resources",
     image: "/images/practice-areas/mining-energy.jpg",
     description:
       "Legal advice for mining and energy projects, investment, licensing, agreements, and transactions.",
     details: [
-      "Anggoro & Associates has been involved in important aspects of the mining industry, including coal, copper, gold, and hydropower projects.",
+      "Anggoro & Associates has been involved in important aspect of Plantation, Energy & Natural Resources.",
       "Our services include advising clients and arranging project-specific agreements, assisting with foreign investment company (PMA) incorporation and relevant permits, and providing legal advice throughout the process.",
       "We also assist with legal due diligence, share restructuring, mergers and acquisitions, and mining company working capital matters, including communication and coordination with relevant government institutions.",
     ],

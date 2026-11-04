@@ -1,14 +1,35 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 export default function Parallax() {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const reduceMotion = useReducedMotion();
+  // Track the section as it travels through the mobile viewport.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Move the background in the opposite direction to the page scroll.
+  // The image layer is oversized in CSS so its edges remain covered.
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [-240, 240]);
 
   return (
-    <section className="parallax">
+    <section ref={sectionRef} className="parallax">
       <div className="parallax__background">
-        <div className="parallax__image" />
+        <motion.div
+          className="parallax__image"
+          style={{
+            y: reduceMotion ? 0 : backgroundY,
+          }}
+        />
         <div className="parallax__overlay" />
       </div>
 

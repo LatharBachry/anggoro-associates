@@ -161,33 +161,41 @@
 
 @media (max-width: 768px) {
   .parallax {
-    min-height: 290px;
+    min-height: 230px;
   }
 
   .parallax__container {
-    padding: 48px var(--page-padding);
+    padding: 30px 20px;
   }
 
   .parallax__eyebrow {
-    margin-bottom: 18px;
-    font-size: 9px;
+    margin-bottom: 12px;
+    font-size: 8px;
+    letter-spacing: 0.2em;
   }
 
   .parallax__title {
-    font-size: clamp(27px, 7vw, 34px);
-    line-height: 1.22;
+    font-size: clamp(22px, 5.8vw, 26px);
+    line-height: 1.16;
   }
 
   .parallax__description {
-    max-width: 500px;
-    margin-top: 18px;
-    font-size: 12px;
-    line-height: 1.85;
+    max-width: 440px;
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.65;
   }
 
   .parallax__image {
+    /*
+      Extra image height gives the translated background enough room
+      to move without revealing the section's empty edges.
+    */
+    inset: -260px 0;
     background-attachment: scroll;
-    background-position: center;
+    background-position: center 48%;
+    background-size: cover;
+    will-change: transform;
   }
 }
 
@@ -197,21 +205,27 @@
 
 @media (max-width: 480px) {
   .parallax {
-    min-height: 270px;
+    min-height: 215px;
   }
 
   .parallax__container {
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding: 26px 18px;
+  }
+
+  .parallax__eyebrow {
+    margin-bottom: 10px;
+    font-size: 7.5px;
   }
 
   .parallax__title {
-    font-size: 27px;
+    font-size: clamp(21px, 5.6vw, 24px);
+    line-height: 1.15;
   }
 
   .parallax__description {
-    font-size: 11px;
-    line-height: 1.8;
+    margin-top: 10px;
+    font-size: 10.5px;
+    line-height: 1.6;
   }
 }
 

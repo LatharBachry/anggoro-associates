@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 
+import LoadingScreen from "@/components/layout/loading-screen";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cormorant.variable} ${montserrat.variable}`}>
+        <LoadingScreen />
         {children}
       </body>
     </html>

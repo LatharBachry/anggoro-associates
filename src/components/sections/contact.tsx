@@ -60,11 +60,10 @@ function Icon({ name }: { name: IconName }) {
   }
 }
 
-const mapUrl =
-  "https://maps.google.com/maps?ll=-6.271504,106.979673&z=14&t=m&hl=id-ID&gl=US&mapclient=embed&cid=12774982824698459852";
+const mapUrl = "https://maps.app.goo.gl/kn7HqExJJ15jxH8V8";
 
 const mapEmbedUrl =
-  "https://www.google.com/maps?q=-6.271504,106.979673&z=15&output=embed";
+  "https://maps.google.com/maps?q=-6.2742084,106.9753903&z=17&output=embed";
 
 const phones = [
   { label: "+62 812 9101 9997", href: "tel:+6281291019997" },
@@ -254,7 +253,6 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

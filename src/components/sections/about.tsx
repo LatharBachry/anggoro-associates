@@ -58,7 +58,7 @@ export default function About() {
           </h2>
 
           <div className="about__description">
-            <p className="about__intro">
+            <p>
               Founded in 2008 by Dhana Anggoro, Anggoro & Associates is an
               Indonesian law firm providing legal counsel and representation to
               local and international clients, including those from Australia,

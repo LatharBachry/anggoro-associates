@@ -3,8 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__container">
         <p className="footer__copyright">
-          © {new Date().getFullYear()} Anggoro & Associates. All Rights
-          Reserved.
+          © Anggoro Law Established Since 2012
         </p>
       </div>
     </footer>
