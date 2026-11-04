@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -11,15 +11,29 @@ import {
 export default function Parallax() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const reduceMotion = useReducedMotion();
-  // Track the section as it travels through the mobile viewport.
+  const [isMobile, setIsMobile] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Move the background in the opposite direction to the page scroll.
-  // The image layer is oversized in CSS so its edges remain covered.
-  const backgroundY = useTransform(scrollYProgress, [0, 1], [-240, 240]);
+  // Both breakpoints use real scroll-linked movement.
+  // Desktop is deliberately more restrained; mobile gets a stronger travel.
+  const desktopBackgroundY = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+  const mobileBackgroundY = useTransform(scrollYProgress, [0, 1], [-220, 220]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const updateViewport = () => setIsMobile(mediaQuery.matches);
+
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateViewport);
+    };
+  }, []);
 
   return (
     <section ref={sectionRef} className="parallax">
@@ -27,7 +41,11 @@ export default function Parallax() {
         <motion.div
           className="parallax__image"
           style={{
-            y: reduceMotion ? 0 : backgroundY,
+            y: reduceMotion
+              ? 0
+              : isMobile
+                ? mobileBackgroundY
+                : desktopBackgroundY,
           }}
         />
         <div className="parallax__overlay" />
